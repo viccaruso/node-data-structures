@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "name": "data-structures",
+  "version": "1.0.0",
+  "main": "sandbox.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start" : "nodemon sandbox.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/viccaruso/node-data-structures.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/viccaruso/node-data-structures/issues"
+  },
+  "homepage": "https://github.com/viccaruso/node-data-structures#readme",
+  "description": ""
+}
