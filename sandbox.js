@@ -70,3 +70,31 @@ B.add(D);
 B.add(C);
 
 console.log(B);
+
+// PersonTreeNode
+class PersonTreeNode {
+  constructor(person) {
+    this.value = person.name;
+    this.person = person;
+    this.left = null;
+    this.right = null;
+  }
+
+  add(node) {
+    if (node.value < this.value) {
+      !this.left ? this.left = node : this.left.add(node);
+    } else if (node.value > this.value) {
+      !this.right ? this.right = node : this.right.add(node);
+    }
+  }
+
+  findPerson(name) {
+    if (this.value === name) return this.person;
+    if (this.value < name) {
+      return this.left.findPerson(name);
+    } else {
+      return this.right.findPerson(name);
+    }
+
+  }
+}
