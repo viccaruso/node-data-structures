@@ -90,11 +90,24 @@ class PersonTreeNode {
 
   findPerson(name) {
     if (this.value === name) return this.person;
-    if (this.value < name) {
+    if (name < this.value && this.left != null) {
       return this.left.findPerson(name);
-    } else {
+    } else if (name > this.value && this.right != null) {
       return this.right.findPerson(name);
+    } else {
+      return "Person not found."
     }
 
   }
 }
+
+const Jones = new PersonTreeNode({name: 'Jones', age: 25});
+const Brook = new PersonTreeNode({name: 'Brook', age: 72});
+const Smith = new PersonTreeNode({name: 'Smith', age: 28});
+const Nelson = new PersonTreeNode({name: 'Nelson', age: 63});
+
+Jones.add(Brook);
+Jones.add(Smith);
+Jones.add(Nelson);
+
+console.log('Found person: ', Jones.findPerson('Nelson'));
